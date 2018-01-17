@@ -1,0 +1,21 @@
+{
+  "name": "alfred",
+  "version": "1.0.0",
+  "description": "Alfred will help meal plan, track inventory, and order groceries.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node bootstrap.js"
+  },
+  "author": "Rend Alsaadi",
+  "license": "ISC",
+  "dependencies": {
+    "@google-cloud/datastore": "^1.1.0",
+    "ag-grid-angular": "^15.0.0",
+    "babel-core": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "hapi": "^16.6.2",
+    "q": "^1.5.0",
+    "uuid": "^3.1.0"
+  }
+}

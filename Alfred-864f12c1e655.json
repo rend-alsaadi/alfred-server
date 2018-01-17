@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "alfred-181813",
+  "private_key_id": "864f12c1e6557a1af6491fa8b5368e83895f3403",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDbKp473ML/6gxy\nBUIs4awpQkYLfT9IEESEwDewB9NJq3bpGSK045B/NeZr3w/Ic70llFvMeHVqdWFg\no0esU1ZI75dgZOdodsKkFRXKSSBGmIt4FAGo9I/do63ZSlOxsbtg2HJXl1Ikww9T\nTelzQAyLXEzfLl/BiO9VhvBLyztNLdgpEAX6LY3cbs2U4Ok8ystBPuRi+eNOpRXv\nOGLzUPbGP8W6fXtt5sXMopZU4gHdlQK5YC+UppRfVEyfni0dtSIsPyPiZt1EIikw\neaxafkUv6kbsyB/5ytSNoutYCRj2S4b/1K88/dJS26cERHN5oGKqPTRPAMhRyFin\n8LjGAHazAgMBAAECggEAO2dwTzJ1qk7ig684MhkTBHXhrXCLy/kY0VCWZ4CffNrc\nVq8I8LWzrz9JTti9muwACyUMwr2tuabKN5raLPPDse46/hYrgO2bsUTDzLoIZQoo\n12m4z3ZGXmFkmD5ktAfEDaptR5+M1MkIKOC305S7MbTZYy7bJoZ6tJhoHmseDjtL\nwV4EXLMe2Ujtumc29OBndABBl4P9VbwggPiw1Te4m89RALYqx97vAYUwEPZbvyBL\nk5yWYg1NqTIQIkIVZbFXsiZul7GCN78o56QHOvOk/JimFBidJ7Iv2V+Omu6Q3gxH\ny3AlQeu4yLyEJrOfxAPrEvUyVhIoEenl/5CT35RJ3QKBgQD6A4BPrd5Uot/usuYb\n+b95rGeYSVc5sAI4KOGISr6XY0skB8eTH5b2sH5j2Ap6qBpagEr0MaVXrKuwDI9k\n3mSWimJlG47G0S+o6PnsiRN7/3If6qvrjqTT6mXp3bRlQrjo5+ALiA7nHANt3KWw\nCaqg0HAUA4+YjoBhQCyJCg+hjwKBgQDgagi3MEAZDz+42l8HdFr9AioIZAFR6FhB\nD9e7gln7jMdwjAjf/0EEbvRoPZy51kS54OVqGY+ON4tm3XYpUdgue7D+0eklI0+I\nZzDnyfB38qRJCaMv6RQ9VMTFM5xdzLRSP+BlRl4zuC8l9m3zr27gxclybCKIi1fS\nB4oHibp+nQKBgQDOVWtk1wKhaRZUwlKEjhaHTVDl7slM88SxIpQXTlCDUlAmOUFt\nW2nUyA5XSmpDlk7BmBXD+OETPY8oKQWC4sOzNhxEg3zO+r9RsIzquKpa8JP4YU1n\nh37i4hUf8Hg8BdfjZ9KQ0cYy1/zAg5Q+d4vZUozdB59P8XNkT3kx1BrYYwKBgDwR\nZb/S9HVAtae/G8ydAnXSjHmuewP3kxfnK7GPFJLWfdPMR9vdMQQExvrX8wlzJvYy\nEnYx3VEN4QxpnuU0eQ8IILo0aZl9OB6ksFx6mxkgI4VBRSLf2oEIHZtDU0lwL5wM\naP3ytehWFpisu4WMobscde1gsGWoFpurVPDrlrWpAoGBAPI/JDkQbp5zBAPYCgux\nIfroOR1sZTeujechN7YCEAu31VoGZj7K38n9+ja2jBz67dW0QRifLidXpTNVhQq/\n7uPoQz866qDxc78gCzNDSFDDyxRKXbqzPr8moI1LXh7L2a8sOkLm55vrxIvwzHNM\nM+/V7YF4e0RlpCaHM4aVECWp\n-----END PRIVATE KEY-----\n",
+  "client_email": "local-alfred-datastore@alfred-181813.iam.gserviceaccount.com",
+  "client_id": "110131784119726181046",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/local-alfred-datastore%40alfred-181813.iam.gserviceaccount.com"
+}
