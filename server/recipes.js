@@ -1,16 +1,19 @@
 import Q from 'q';
-import googleDataStore from '@google-cloud/datastore'
 import dataStoreCredentials from './components/datastore';
 import bulkRecipes from './../datastore_seeds/recipe_seeds';
+const Recipe = require('../models/recipe.model');
 
-//Authentication parameters for Google DataStore
-const dataStoreClient = googleDataStore({
+//Authentication parameters and keys for Google DataStore
+const gstore = require('gstore-node')();
+const dataStoreClient = require('@google-cloud/datastore')({
     projectId: dataStoreCredentials.projectId,
     keyFilename: dataStoreCredentials.keyFilename
 });
-
+gstore.connect(dataStoreClient);
 const newRecipeKey = dataStoreClient.key('Recipe');
 
+
+/******ROUTES********/
 const recipeRoutes = [
     //Gets all recipes
     {
@@ -93,12 +96,23 @@ const recipeRoutes = [
 const getAllRecipes = () => {
     const deferred = Q.defer();
 
-    const recipeQuery = dataStoreClient.createQuery('Recipe');
-    dataStoreClient.runQuery(recipeQuery).then((results) => {
+    Recipe.query().run().then(results => {
         deferred.resolve(results);
     }).catch((err) => {
         deferred.reject(err);
     });
+    /*
+    const recipeQuery = dataStoreClient.createQuery('Recipe');
+    dataStoreClient.runQuery(recipeQuery).then((results) => {
+        var keys = results.map(function (entity) {
+            // datastore.KEY is a Symbol
+            return entity[dataStoreClient.KEY];
+        });
+        deferred.resolve(results);
+    }).catch((err) => {
+        deferred.reject(err);
+    });
+    */
 
     return deferred.promise;
 }
