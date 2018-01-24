@@ -10,7 +10,7 @@ const dataStoreClient = require('@google-cloud/datastore')({
     keyFilename: dataStoreCredentials.keyFilename
 });
 gstore.connect(dataStoreClient);
-const newRecipeKey = dataStoreClient.key('Recipe');
+const newRecipeKey = dataStoreClient.key('Recipe','');
 
 
 /******ROUTES********/
@@ -33,7 +33,7 @@ const recipeRoutes = [
             })
         }
     },
-    //Adds a new recipe
+    //Adds a new recipe or updates it if an id is provided
     {
         config: {
             cors: {
@@ -44,27 +44,11 @@ const recipeRoutes = [
         path: '/recipe',
         method: 'POST',
         handler: (request, reply) => {
-            const newRecipe = {
-                recipeName: request.payload.recipeName,
-                servings: request.payload.servings,
-                ingredients: request.payload.ingredients,
-                prepTime: request.payload.prepTime,
-                directions: request.payload.directions,
-                mealType: request.payload.mealType,
-                amountOfTimesMade: request.payload.amountOfTimesMade,
-                season: request.payload.season
-            }
-
-            const newRecipeEntity = {
-                key: newRecipeKey,
-                data: newRecipe
-            }
             /*
             TODO
             	1. Make sure that recipe name doesn't already exist before adding the new one. 
             */
-            //Insert new recipe to DataStore
-            dataStoreClient.insert(newRecipeEntity).then((results) => {
+            dataStoreClient.upsert(createEntity(request.payload)).then((results) => {
                 reply(results);
             }).catch((err) => {
                 reply(err);
@@ -101,20 +85,17 @@ const getAllRecipes = () => {
     }).catch((err) => {
         deferred.reject(err);
     });
-    /*
-    const recipeQuery = dataStoreClient.createQuery('Recipe');
-    dataStoreClient.runQuery(recipeQuery).then((results) => {
-        var keys = results.map(function (entity) {
-            // datastore.KEY is a Symbol
-            return entity[dataStoreClient.KEY];
-        });
-        deferred.resolve(results);
-    }).catch((err) => {
-        deferred.reject(err);
-    });
-    */
 
     return deferred.promise;
+}
+
+//function below could be a app-wide service later on
+const createEntity = (payload) => {
+    const entity = {
+        key: dataStoreClient.key([payload.entityType,parseInt(payload.id)]),
+        data: payload.data
+    }
+    return entity
 }
 
 module.exports = { recipeRoutes, getAllRecipes };
